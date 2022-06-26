@@ -10,7 +10,6 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
 
     @Column(nullable = false)
     private String fullName;
@@ -30,13 +29,6 @@ public class User {
 
     public User() {}
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getFullName() {
         return fullName;
@@ -57,7 +49,7 @@ public class User {
     public String getEmailAddress() {
         return emailAddress;
     }
-
+a
     public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
     }
