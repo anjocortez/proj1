@@ -1,5 +1,6 @@
 package com.example.appadv.proj1.model;
 
+import com.example.appadv.proj1.dto.UserDTO;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -18,6 +19,9 @@ public class User {
     private String userName;
 
     @Column(nullable = false)
+    private String password;
+
+    @Column(nullable = false)
     @CreationTimestamp
     private String emailAddress;
 
@@ -29,6 +33,11 @@ public class User {
 
     public User() {}
 
+    public User(UserDTO userDTO){
+        this.fullName = userDTO.getFullName();
+        this.userName = userDTO.getUserName();
+        this.password = userDTO.getPassword();
+    }
 
     public String getFullName() {
         return fullName;
@@ -46,12 +55,14 @@ public class User {
         this.userName = userName;
     }
 
-    public String getEmailAddress() {
-        return emailAddress;
+
+
+    public String getPassword() {
+        return password;
     }
-a
-    public void setEmailAddress(String emailAddress) {
-        this.emailAddress = emailAddress;
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public LocalDateTime getDateTime() {
